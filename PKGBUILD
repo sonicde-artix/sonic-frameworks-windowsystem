@@ -1,4 +1,5 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: callmetango
+# Contributor: artist <artist@artixlinux.org>
 
 pkgname=sonic-frameworks-windowsystem
 pkgver=6.26.0
@@ -19,11 +20,12 @@ makedepends=(doxygen
              qt6-declarative
              qt6-tools)
 optdepends=('qt6-declarative: QML bindings')
-conflicts=('kwindowsystem')
-provides=('kwindowsystem')
-replaces=('kwindowsystem')
 groups=(sonicde-frameworks)
-source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/$pkgver.tar.gz")
+conflicts=('kwindowsystem')
+replaces=('kwindowsystem')
+provides=('kwindowsystem')
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('58a768b5da6916de9e13d02dae4eaa8aff99317b095a9b18306d0f3f162f47ad')
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -34,6 +36,3 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
-
-sha256sums=('58a768b5da6916de9e13d02dae4eaa8aff99317b095a9b18306d0f3f162f47ad')
-
