@@ -3,7 +3,7 @@
 
 pkgname=sonic-frameworks-windowsystem
 pkgver=6.26.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Access to the windowing system for Artix Linux'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-frameworks-windowsystem'
